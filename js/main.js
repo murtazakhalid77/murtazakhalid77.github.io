@@ -152,6 +152,46 @@ function initCounters() {
   counters.forEach(counter => observer.observe(counter));
 }
 
+
+function initCustomCursor() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const dot = document.createElement('span');
+  const ring = document.createElement('span');
+  dot.className = 'cursor-dot';
+  ring.className = 'cursor-ring';
+  document.body.append(dot, ring);
+
+  let dotX = window.innerWidth / 2;
+  let dotY = window.innerHeight / 2;
+  let ringX = dotX;
+  let ringY = dotY;
+
+  const moveCursor = (event) => {
+    dotX = event.clientX;
+    dotY = event.clientY;
+    dot.style.left = `${dotX}px`;
+    dot.style.top = `${dotY}px`;
+    document.body.classList.add('custom-cursor-ready');
+    document.body.classList.remove('cursor-hidden');
+  };
+
+  const animateRing = () => {
+    ringX += (dotX - ringX) * 0.18;
+    ringY += (dotY - ringY) * 0.18;
+    ring.style.left = `${ringX}px`;
+    ring.style.top = `${ringY}px`;
+    requestAnimationFrame(animateRing);
+  };
+
+  document.addEventListener('mousemove', moveCursor);
+  document.addEventListener('mouseleave', () => document.body.classList.add('cursor-hidden'));
+  document.addEventListener('mouseenter', () => document.body.classList.remove('cursor-hidden'));
+  document.addEventListener('mouseover', (event) => {
+    const target = event.target.closest('a, button, input, textarea, .card, .btn, .nav-toggle');
+    document.body.classList.toggle('cursor-hover', Boolean(target));
+  });
+  animateRing();
+}
 function initContactForm() {
   const form = document.querySelector('[data-contact-form]');
   if (!form) return;
@@ -173,7 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initCounters();
   initContactForm();
+  initCustomCursor();
 });
+
 
 
 

@@ -166,4 +166,64 @@ input:focus, textarea:focus { border-color: rgba(25,211,255,.65); box-shadow: 0 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-ready,
+  body.custom-cursor-ready a,
+  body.custom-cursor-ready button,
+  body.custom-cursor-ready input,
+  body.custom-cursor-ready textarea {
+    cursor: none;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .18s ease, width .18s ease, height .18s ease, border-color .18s ease, background .18s ease;
+  }
+
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--mint);
+    box-shadow: 0 0 18px rgba(18, 240, 168, .72);
+  }
+
+  .cursor-ring {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(25, 211, 255, .62);
+    background: rgba(25, 211, 255, .06);
+    box-shadow: 0 0 28px rgba(25, 211, 255, .16);
+  }
+
+  body.custom-cursor-ready .cursor-dot,
+  body.custom-cursor-ready .cursor-ring {
+    opacity: 1;
+  }
+
+  body.cursor-hover .cursor-dot {
+    width: 11px;
+    height: 11px;
+    background: var(--cyan);
+  }
+
+  body.cursor-hover .cursor-ring {
+    width: 54px;
+    height: 54px;
+    border-color: rgba(18, 240, 168, .7);
+    background: rgba(18, 240, 168, .08);
+  }
+
+  body.cursor-hidden .cursor-dot,
+  body.cursor-hidden .cursor-ring {
+    opacity: 0;
+  }
+}
 
