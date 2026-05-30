@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   color-scheme: dark;
   --bg: #060b13;
   --panel: rgba(14, 25, 40, .82);
@@ -123,7 +123,7 @@ p { color: var(--muted); line-height: 1.75; margin: 0; }
 
 .split { display: grid; grid-template-columns: .85fr 1.15fr; gap: 2rem; align-items: start; }
 .profile-panel { padding: 1.25rem; position: sticky; top: 100px; }
-.profile-panel img { border-radius: 12px; border: 1px solid var(--line); margin-bottom: 1rem; }
+.profile-panel img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 1rem; }
 .info-list { display: grid; gap: .7rem; margin-top: 1rem; }
 .info-list a, .info-list div { display: flex; align-items: center; gap: .7rem; color: var(--muted); }
 .contact-form { display: grid; gap: 1rem; }
@@ -166,3 +166,4 @@ input:focus, textarea:focus { border-color: rgba(25,211,255,.65); box-shadow: 0 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
