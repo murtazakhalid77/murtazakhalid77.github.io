@@ -1,4 +1,4 @@
-const portfolioData = {
+﻿const portfolioData = {
   skills: [
     ['Java', 94], ['Spring Boot', 92], ['Spring Security', 86], ['Microservices', 90],
     ['Kafka', 84], ['RabbitMQ', 82], ['MySQL', 84], ['Oracle', 80],
@@ -160,7 +160,7 @@ function initContactForm() {
     const data = new FormData(form);
     const subject = encodeURIComponent(data.get('subject') || 'Portfolio inquiry');
     const body = encodeURIComponent(`Hi Murtaza,\n\n${data.get('message') || ''}\n\nFrom: ${data.get('name') || ''}\nEmail: ${data.get('email') || ''}`);
-    window.location.href = `mailto:murtazakhalid888@gmail.com?subject=${subject}&body=${body}`;
+    window.open(`mailto:murtazakhalid888@gmail.com?subject=${subject}&body=${body}`, `_blank`, `noopener,noreferrer`);
   });
 }
 
@@ -174,3 +174,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initContactForm();
 });
+
