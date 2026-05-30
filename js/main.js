@@ -160,7 +160,7 @@ function initContactForm() {
     const data = new FormData(form);
     const subject = encodeURIComponent(data.get('subject') || 'Portfolio inquiry');
     const body = encodeURIComponent(`Hi Murtaza,\n\n${data.get('message') || ''}\n\nFrom: ${data.get('name') || ''}\nEmail: ${data.get('email') || ''}`);
-    window.location.href = `mailto:murtazakhalid888@gmail.com?subject=${subject}&body=${body}`;
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=murtazakhalid888@gmail.com&su=${subject}&body=${body}`, `_blank`, `noopener,noreferrer`);
   });
 }
 
@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initContactForm();
 });
+
 
 
 
