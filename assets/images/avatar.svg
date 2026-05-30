@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+  <title id="title">Professional avatar placeholder</title>
+  <desc id="desc">Abstract portrait for Murtaza Khalid portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18d5ff"/>
+      <stop offset="0.48" stop-color="#7467ff"/>
+      <stop offset="1" stop-color="#12f0a8"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#13223a"/>
+      <stop offset="1" stop-color="#07111f"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .55 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="420" height="420" rx="42" fill="#08111f"/>
+  <circle cx="94" cy="86" r="82" fill="#18d5ff" opacity=".16" filter="url(#soft)"/>
+  <circle cx="338" cy="318" r="104" fill="#12f0a8" opacity=".14" filter="url(#soft)"/>
+  <path d="M72 332c26-64 75-97 138-97s112 33 138 97v38H72z" fill="url(#suit)"/>
+  <path d="M164 252h92l-46 70z" fill="#e7f2ff" opacity=".9"/>
+  <circle cx="210" cy="154" r="72" fill="#d9e8ff"/>
+  <path d="M137 151c14-54 48-82 102-73 30 5 52 24 63 57-30-12-57-20-86-22-30-2-55 10-79 38z" fill="#111c2d"/>
+  <path d="M98 362h224" stroke="url(#bg)" stroke-width="5" stroke-linecap="round"/>
+  <g fill="none" stroke="#9bdcff" stroke-opacity=".55">
+    <path d="M44 102h58m-29-29v58"/>
+    <path d="M318 90h54m-27-27v54"/>
+    <path d="M54 267h42m-21-21v42"/>
+  </g>
+</svg>
